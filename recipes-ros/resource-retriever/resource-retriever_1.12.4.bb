@@ -6,11 +6,10 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=18;endline=18;md5=d566ef916e9de
 
 DEPENDS = "curl rosconsole roslib"
 
-SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz \
-           file://0001-Python3-compatibility-10.patch \
-           "
-SRC_URI[md5sum] = "cd1055502daeaf93985fb56327c419f4"
-SRC_URI[sha256sum] = "db3ce752736123499d80d803526080e31f2ba21460fd135186b26bf7b72fed2a"
+SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
+
+SRC_URI[md5sum] = "0e94b9f8a9da74f52a18af9135f8ca32"
+SRC_URI[sha256sum] = "936fdbcc59d72773e2950800b1ce259bf0c5e518ea64af9d37b64960b3945d46"
 
 S = "${WORKDIR}/${ROS_SP}"
 

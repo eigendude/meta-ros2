@@ -4,7 +4,7 @@ LICENSE = "GPL"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=18;endline=18;md5=162b49cfbae9eadf37c9b89b2d2ac6be"
 
 SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "632f9a1faaf05ba1e92e133156af9434"
-SRC_URI[sha256sum] = "cc79cfe48a7630c32c0e0d4418e87e868c6ac377fab959c23f966a00e3b01120"
+SRC_URI[md5sum] = "bd2eea792abbfaab65c4c3cc39d50f7f"
+SRC_URI[sha256sum] = "f880b936c30fe07201fade652f5cd17d058451f92064cc03e726c8848e82387e"
 
 inherit catkin

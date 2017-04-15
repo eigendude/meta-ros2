@@ -6,8 +6,8 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=13;endline=13;md5=d566ef916e9de
 DEPENDS = "message-generation sensor-msgs message-filters tf roscpp filters laser-geometry pluginlib"
 
 SRC_URI = "https://github.com/ros-perception/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "f9a368c1ec64c47c3539ad2eb58e95e2"
-SRC_URI[sha256sum] = "11c01b45917f9b9f24d19b38e8d32046da4f6deae479812b2326b7deb2a624f4"
+SRC_URI[md5sum] = "26ca6cccc72815f6574443ee8a1f9990"
+SRC_URI[sha256sum] = "427b80cb87835a55522c6646a4d7d922e473d349a9476f6ea58c9df53dc93205"
 
 S = "${WORKDIR}/${ROS_SP}"
 

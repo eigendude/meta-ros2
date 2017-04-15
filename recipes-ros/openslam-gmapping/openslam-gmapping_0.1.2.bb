@@ -4,8 +4,8 @@ LICENSE = "CC-BY-NC-SA-2.0"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=6;endline=6;md5=11e24f757f025b2cbebd5b14b4a7ca19"
 
 SRC_URI = "https://github.com/ros-perception/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "da2548abb3d351b199896dc62363ae65"
-SRC_URI[sha256sum] = "b54235b197cfd0bb5ce4689310d1b52af838d4614ac37e5f03be18d53eb39683"
+SRC_URI[md5sum] = "9a3c7cd4edb0643c72b0580c59260f5b"
+SRC_URI[sha256sum] = "4c497772104d2821325447b6782cc921a1a8639a0f46b90cdf68d5c95ecb0315"
 
 SRC_URI += "file://0001-make-it-compile-with-glibc-2.26-with-an-explicit-cas.patch"
 

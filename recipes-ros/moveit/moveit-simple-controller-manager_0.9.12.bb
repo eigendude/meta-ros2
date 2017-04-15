@@ -7,6 +7,4 @@ DEPENDS = "moveit-core actionlib control-msgs pluginlib roscpp"
 
 require moveit.inc
 
-SRC_URI_append = " file://0001-Fix-conversion-of-shared-ptr-to-bool-for-C-11.patch"
-
 ROS_BPN = "moveit_plugins/moveit_simple_controller_manager"

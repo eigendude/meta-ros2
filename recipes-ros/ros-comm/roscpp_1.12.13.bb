@@ -10,10 +10,6 @@ DEPENDS = "cpp-common message-generation rosconsole roscpp-serialization roscpp-
 
 require ros-comm.inc
 
-SRC_URI += "\
-    file://0001-roscpp-add-missing-header-for-writev.patch;striplevel=3\
-    file://0001-make-implicit-cast-explicit.patch;striplevel=3"
-
 ROS_PKG_SUBDIR = "clients"
 
 CXXFLAGS_append = " -I${OECMAKE_BUILDPATH}/devel/include"

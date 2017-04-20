@@ -4,6 +4,6 @@ SECTION = "devel"
 LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://package.xml;beginline=18;endline=18;md5=d566ef916e9dedc494f5f793a6690ba5"
 
-DEPENDS = "angles assimp resource-retriever collada-dom collada-parser roscpp urdf geometric-shapes tf libtinyxml"
+DEPENDS = "angles assimp cmake-modules collada-dom collada-parser libeigen geometric-shapes resource-retriever rosconsole urdf"
 
 require collada-urdf.inc

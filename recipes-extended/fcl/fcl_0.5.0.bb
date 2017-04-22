@@ -6,8 +6,9 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=5823baab4b8de52197d0fb775e8fd4b7"
 # Octomap dependency not included as it is optional.
 DEPENDS = "boost libccd octomap"
 
-SRC_URI = "https://github.com/flexible-collision-library/fcl/archive/${PV}.tar.gz"
-
+SRC_URI = "https://github.com/flexible-collision-library/fcl/archive/${PV}.tar.gz \
+           file://0001-Add-configure-option-FCL_NO_DEFAULT_RPATH-203.patch \
+          "
 # \
 #           file://0001-Add-configure-option-NO_DEFAULT_RPATH.patch \
 #          "
@@ -21,7 +22,7 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
 SRC_URI += "file://LICENSE;subdir=fcl-${PV}"
 
-EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release -DNO_DEFAULT_RPATH=OFF"
+EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release -DFCL_NO_DEFAULT_RPATH=OFF"
 FILES_${PN} += "${libdir}/libfcl.so"
 
 # Need to override this, otherwise libfcl.so is included in dev packageW.

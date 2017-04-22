@@ -1,0 +1,53 @@
+From aecacfdd23f05dde88ad50892e27edea62b9198f Mon Sep 17 00:00:00 2001
+From: Dmitry Rozhkov <dmitry.rojkov@gmail.com>
+Date: Tue, 7 Feb 2017 15:59:41 +0200
+Subject: [PATCH] Add configure option FCL_NO_DEFAULT_RPATH (#203)
+
+The currently used compiler settings explicitly set RPATH to
+installed binaries which is not desired behaviour in some
+circumstances, e.g. OpenEmbedded's QA checks report an issue
+about redundant RPATH set to the standard '/usr/lib' directory.
+
+This patch adds the configure option FCL_NO_DEFAULT_RPATH which is
+ON by default in order to preserve the current behaviour, but
+when set to OFF make CMake use its default RPATH settings, that is
+set RPATH for the binaries in the build tree, but clear them out
+for installed binaries.
+
+Signed-off-by: Dmitry Rozhkov <dmitry.rozhkov@linux.intel.com>
+---
+ CMakeModules/CompilerSettings.cmake | 17 +++++++++++++----
+ 1 file changed, 13 insertions(+), 4 deletions(-)
+
+diff --git a/CMakeModules/CompilerSettings.cmake b/CMakeModules/CompilerSettings.cmake
+index 2bd0f61..3d4fd46 100644
+--- a/CMakeModules/CompilerSettings.cmake
++++ b/CMakeModules/CompilerSettings.cmake
+@@ -43,11 +43,20 @@ if((CMAKE_COMPILER_IS_GNUCXX OR IS_ICPC) AND NOT MINGW)
+     add_definitions(-fPIC)
+ endif((CMAKE_COMPILER_IS_GNUCXX OR IS_ICPC) AND NOT MINGW)
+ 
++# By default CMake sets RPATH for binaries in the build tree, but clears
++# it when installing. Switch this option off if the default behaviour is
++# desired.
++option(FCL_NO_DEFAULT_RPATH "Set RPATH for installed binaries" ON)
++mark_as_advanced(FCL_NO_DEFAULT_RPATH)
++
+ # Set rpath http://www.paraview.org/Wiki/CMake_RPATH_handling
+-set(CMAKE_SKIP_BUILD_RPATH FALSE)
+-set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
+-set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_LIBDIR_FULL}")
+-set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
++if(FCL_NO_DEFAULT_RPATH)
++    message(STATUS "Set RPATH explicitly to '${CMAKE_INSTALL_LIBDIR_FULL}'")
++    set(CMAKE_SKIP_BUILD_RPATH FALSE)
++    set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
++    set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_LIBDIR_FULL}")
++    set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
++endif()
+ 
+ # no prefix needed for python modules
+ set(CMAKE_SHARED_MODULE_PREFIX "")
+-- 
+1.9.1
+

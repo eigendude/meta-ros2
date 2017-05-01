@@ -6,5 +6,3 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=d566ef916e9de
 DEPENDS = "roscpp visualization-msgs yocs-msgs geometry-msgs yaml-cpp"
 
 require yujin-ocs.inc
-
-SRC_URI += "file://0001-yocs_waypoint_provider-also-install-libraries.patch;striplevel=2"

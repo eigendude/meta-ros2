@@ -7,8 +7,8 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=12;endline=12;md5=d566ef916e9de
 DEPENDS = "std-msgs actionlib-msgs message-generation"
 
 SRC_URI = "https://github.com/yujinrobot/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "9a2ebd9de77d546636027b9ddeb5dd84"
-SRC_URI[sha256sum] = "e8814159bec34b707936c69d06ca68eef02b5859f449b3c917ec236bf44cfaf9"
+SRC_URI[md5sum] = "618e1d770aac86580d82b4572acbaa6e"
+SRC_URI[sha256sum] = "577e63e80fe42a64078e424890b227a15dbbcf0a0cc423336d5d6f503890a2ee"
 
 S = "${WORKDIR}/${ROS_SP}"
 

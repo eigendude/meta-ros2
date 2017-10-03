@@ -9,7 +9,6 @@ require industrial-core.inc
 
 SRC_URI += " \
            file://0001-client-build-unit-tests-conditionally.patch \
-           file://0001-industrial_robot_client-Fix-signature-of-goal-and-ca.patch \
            "
 
 EXTRA_OECMAKE_append = "\

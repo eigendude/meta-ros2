@@ -12,6 +12,7 @@ DEPENDS = " \
 "
 
 RDEPENDS_${PN} = " \
+    bash \
     boost \
     mavlink \
 "
@@ -37,8 +38,10 @@ MAVROS_RUN_AND_BUILD_DEPENDS = " \
 DEPENDS_append = " \
     angles \
     cmake-modules \
+    geographiclib \
     message-runtime \
     rospy \
+    tf2-eigen \
     ${MAVROS_RUN_AND_BUILD_DEPENDS} \
 "
 
@@ -47,6 +50,3 @@ RDEPENDS_${PN}_append = "${MAVROS_RUN_AND_BUILD_DEPENDS}"
 require mavros.inc
 
 ROS_PKG_SUBDIR = "mavros"
-
-SRC_URI += "file://0001-always-find-Eigen-with-cmake_modules-mechanism.patch;striplevel=2 \
-            file://0001-CMake-explicitly-link-the-atomic-library-797.patch;striplevel=2"

@@ -5,7 +5,9 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=11;endline=13;md5=9b511d4c606b1
 DEPENDS = " \
     message-generation \
     std-msgs \
+    geographic-msgs \
     geometry-msgs \
+    sensor-msgs \
 "
 
 RDEPENDS_${PN} = " \

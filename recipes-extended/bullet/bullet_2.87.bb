@@ -12,4 +12,12 @@ S = "${WORKDIR}/bullet3-2.87"
 
 inherit cmake pythonnative
 
+FILES_${PN}-dev += " \
+  /usr/lib/cmake \
+  /usr/lib/cmake/bullet \
+  /usr/lib/cmake/bullet/UseBullet.cmake \
+  /usr/lib/cmake/bullet/BulletConfig.cmake \
+"
+
+
 EXTRA_OECMAKE = "-DBUILD_PYBULLET=OFF"

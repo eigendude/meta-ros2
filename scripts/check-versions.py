@@ -31,6 +31,7 @@ BASE_DIR = "../recipes-ros"
 DEBUG = False
 EXCLUDE = ["packagegroups"]
 
+print_git_commands = True
 
 class MoveRepoExcetion(Exception):
     pass
@@ -185,12 +186,21 @@ def update_checksums_in_file(package, filename, dist_version):
     print_debug("new md5: %s" % md5sum_new)
     print_debug("old sha256: %s" % sha256sum)
     print_debug("new sha256: %s" % sha256sum_new)
-    with open(filename) as recipe_file:
-        recipe_data = recipe_file.read()
-    recipe_data = recipe_data.replace(md5sum, md5sum_new)
-    recipe_data = recipe_data.replace(sha256sum, sha256sum_new)
-    with open(filename, 'w') as recipe_file:
-        recipe_file.write(recipe_data)
+    if print_git_commands:
+        new_md5sum_line = '''SRC_URI[md5sum] = "%s"''' % md5sum_new
+        pattern = ''' 's/SRC_URI\[md5sum\] = ".*"/''' + new_md5sum_line + '''/' '''
+        print("sed -i" + pattern + filename)
+        new_sha256sum_line = '''SRC_URI[sha256sum] = "%s"''' % sha256sum_new
+        pattern = ''' 's/SRC_URI\[sha256sum\] = ".*"/''' + new_sha256sum_line + '''/' '''
+        print("sed -i" + pattern + filename)
+        print("git add " + filename)
+    else:
+        with open(filename) as recipe_file:
+            recipe_data = recipe_file.read()
+        recipe_data = recipe_data.replace(md5sum, md5sum_new)
+        recipe_data = recipe_data.replace(sha256sum, sha256sum_new)
+        with open(filename, 'w') as recipe_file:
+            recipe_file.write(recipe_data)
     return True
 
 
@@ -250,8 +260,14 @@ def update_package(package):
         for [old_fn, new_fn] in rename_requests:
             print_debug("old: %s" % old_fn)
             print_debug("new: %s" % new_fn)
-            os.rename(old_fn, new_fn)
-        print_ok("Updated")
+            if print_git_commands:
+                print("git mv %s %s" % (old_fn, new_fn))
+            else:
+                os.rename(old_fn, new_fn)
+        if print_git_commands:
+            print("git commit -m \"%s: update to %s\"" % (package, dist_version))
+        else:
+            print_ok("Updated")
 
 
 def print_header():

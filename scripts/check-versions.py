@@ -206,10 +206,10 @@ def update_package(package):
     print_header()
     match, version, dist_version = check_version(package, print_info="all", details=True)
     if match:
-        print("Packet is already in newest version")
+        print("Package is already in newest version")
         return
     if dist_version == "":
-        print("Packet not found in dist file")
+        print("Package not found in dist file")
         return
 
     if version == "git":

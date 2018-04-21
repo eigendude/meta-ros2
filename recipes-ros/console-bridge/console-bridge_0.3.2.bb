@@ -11,9 +11,11 @@ LIC_FILES_CHKSUM = "\
 DEPENDS = "boost"
 
 SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "061ae26707cc56db1bb80421abf6c3f0"
-SRC_URI[sha256sum] = "9145f0f97337fc87b4c062a4bab6874e383dad3a303486b635d31af69ee0d536"
+SRC_URI[md5sum] = "6c525353efe6f386fa25d58eafa72869"
+SRC_URI[sha256sum] = "fd12e48c672cb9c5d516d90429c4a7ad605859583fc23d98258c3fa7a12d89f4"
 
 S = "${WORKDIR}/${ROS_SP}"
 
-inherit cmake ros faulty-solibs
+inherit cmake ros
+
+FILES_${PN}-dev += "${libdir}/${ROS_BPN}/cmake"

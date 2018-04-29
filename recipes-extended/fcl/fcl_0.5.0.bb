@@ -23,9 +23,9 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 SRC_URI += "file://LICENSE;subdir=fcl-${PV}"
 
 EXTRA_OECMAKE += "-DCMAKE_BUILD_TYPE=Release -DFCL_NO_DEFAULT_RPATH=OFF"
-FILES_${PN} += "${libdir}/libfcl.so"
+FILES_${PN}-dev += "${libdir}/libfcl.so"
 
 # Need to override this, otherwise libfcl.so is included in dev packageW.
-FILES_${PN}-dev = "${includedir} ${libdir}/pkgconfig"
+# FILES_${PN}-dev = "${includedir} ${libdir}/pkgconfig"
 
-inherit pkgconfig cmake
+inherit pkgconfig cmake faulty-solibs

@@ -13,6 +13,7 @@ S = "${WORKDIR}/bullet3-2.87"
 inherit cmake pythonnative
 
 FILES_${PN}-dev += " \
+  /usr/lib/ \
   /usr/lib/cmake \
   /usr/lib/cmake/bullet \
   /usr/lib/cmake/bullet/UseBullet.cmake \

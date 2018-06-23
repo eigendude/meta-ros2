@@ -1,0 +1,40 @@
+From a87d76e070926ac63df3a857c37e5070c49b57d1 Mon Sep 17 00:00:00 2001
+From: Dmitry Rozhkov <dmitry.rojkov@gmail.com>
+Date: Tue, 27 Jun 2017 01:55:29 +0300
+Subject: [PATCH] [ecl_containers] Fix gcc v7.1 compilation issue (#58)
+
+When built with gcc v7.1 compilation fails with an error message
+about using an expression as a function when updating
+the private attribute FloatContainerFormatter.prm_width.
+
+The patch uses assignment to update the attribute.
+
+Signed-off-by: Dmitry Rozhkov <dmitry.rozhkov@linux.intel.com>
+
+Upstream-Status: Backport [expected in version >= 0.6.18]
+
+This patch has been generated with:
+  `git format-patch -1 a87d76e070926ac63df3a857c37e5070c49b57d1`
+in the ecl_core repository.
+
+Signed-off-by: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+---
+ ecl_containers/include/ecl/containers/common/formatters.hpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/ecl_containers/include/ecl/containers/common/formatters.hpp b/ecl_containers/include/ecl/containers/common/formatters.hpp
+index e26ec60..5f4c026 100644
+--- a/ecl_containers/include/ecl/containers/common/formatters.hpp
++++ b/ecl_containers/include/ecl/containers/common/formatters.hpp
+@@ -123,7 +123,7 @@ class ECL_LOCAL FloatContainerFormatter {
+          * @param w : the width to use for the inserted float.
+          * @return FloatContainerFormatter& : this formatter readied for use with a stream.
+          */
+-        FloatContainerFormatter& operator()(const unsigned int p, const int w) { format.precision(p); prm_width(w); return *this; } // Permanent
++        FloatContainerFormatter& operator()(const unsigned int p, const int w) { format.precision(p); prm_width = w; return *this; } // Permanent
+         /**
+          * Convenient stream formatter. This function directly readies the formatter
+          * with the specified container and the stored (permanent) settings.
+-- 
+2.7.4
+

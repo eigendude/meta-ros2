@@ -6,5 +6,3 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=d566ef916e9dedc
 DEPENDS = "boost cpp-common"
 
 require roscpp-core.inc
-
-SRC_URI += "file://0001-argument-to-boost-microseconds-must-be-integral.patch;striplevel=2"

@@ -1,0 +1,25 @@
+From 44e0482f61e809937392323d76a32f4f357a4e22 Mon Sep 17 00:00:00 2001
+From: Lukas Bulwahn <lukas.bulwahn@gmail.com>
+Date: Thu, 12 Jul 2018 20:21:27 +0200
+Subject: [PATCH] remove SYSTEM attribute
+
+---
+ diff_drive_controller/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/diff_drive_controller/CMakeLists.txt b/diff_drive_controller/CMakeLists.txt
+index 1b818d4..05ef10b 100644
+--- a/diff_drive_controller/CMakeLists.txt
++++ b/diff_drive_controller/CMakeLists.txt
+@@ -21,7 +21,7 @@ include_directories(
+   include
+ )
+ 
+-include_directories(SYSTEM
++include_directories(
+   ${catkin_INCLUDE_DIRS}
+ )
+ 
+-- 
+2.7.4
+

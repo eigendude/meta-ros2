@@ -6,8 +6,8 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=7;endline=7;md5=d566ef916e9dedc
 DEPENDS = "cmake ${PYTHON_PN}-empy-native ${PYTHON_PN}-catkin-pkg-native"
 
 SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
-SRC_URI[md5sum] = "9fa68200ba615face09994c7842b8b4b"
-SRC_URI[sha256sum] = "48ae4695b7424e3da896ae5794b013b635ca8fb8f122b77033bbb548d0e29ab5"
+SRC_URI[md5sum] = "c50589adde1d2783ab609772d83d9d11"
+SRC_URI[sha256sum] = "a41d8bc889e9e5558d4c9688f6916f306e01a65edd5024fbcf42e7e357522786"
 
 SRC_URI += "\
     file://0001-use-python-provided-by-environment-instead-of-the-ge.patch \

@@ -1,9 +1,9 @@
-ROS_ROOT=/opt/ros/kinetic/
-ROS_DISTRO=kinetic
-ROS_PACKAGE_PATH=/opt/ros/kinetic/share
+ROS_ROOT=/opt/ros/melodic/
+ROS_DISTRO=melodic
+ROS_PACKAGE_PATH=/opt/ros/melodic/share
 ROS_PORT=11311
 ROS_MASTER_URI=http://localhost:11311
-CMAKE_PREFIX_PATH=/opt/ros/kinetic/
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/ros/kinetic/bin
-LD_LIBRARY_PATH=/opt/ros/kinetic/lib
-PYTHONPATH=/opt/ros/kinetic/lib/python2.7/site-packages
+CMAKE_PREFIX_PATH=/opt/ros/melodic/
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/ros/melodic/bin
+LD_LIBRARY_PATH=/opt/ros/melodic/lib
+PYTHONPATH=/opt/ros/melodic/lib/python2.7/site-packages

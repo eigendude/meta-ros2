@@ -1,4 +1,4 @@
-This is a layer to provide ROS Kinetic Kame in an OpenEmbedded Linux system.
+This is a layer to provide ROS Melodic Morenia in an OpenEmbedded Linux system.
 It provides a stable cross-compilation build system for many common ROS packages. 
 Currently, this layer is still under continuous development.
 
@@ -209,14 +209,14 @@ resolved in the past.
   to the /etc/hosts file, and set up the environment with
 
     export ROS_ROOT=/opt/ros
-    export ROS_DISTRO=kinetic
-    export ROS_PACKAGE_PATH=/opt/ros/kinetic/share
-    export PATH=$PATH:/opt/ros/kinetic/bin
-    export LD_LIBRARY_PATH=/opt/ros/kinetic/lib
-    export PYTHONPATH=/opt/ros/kinetic/lib/python2.7/site-packages
+    export ROS_DISTRO=melodic
+    export ROS_PACKAGE_PATH=/opt/ros/melodic/share
+    export PATH=$PATH:/opt/ros/melodic/bin
+    export LD_LIBRARY_PATH=/opt/ros/melodic/lib
+    export PYTHONPATH=/opt/ros/melodic/lib/python2.7/site-packages
     export ROS_MASTER_URI=http://localhost:11311
-    export CMAKE_PREFIX_PATH=/opt/ros/kinetic
-    touch /opt/ros/kinetic/.catkin
+    export CMAKE_PREFIX_PATH=/opt/ros/melodic
+    touch /opt/ros/melodic/.catkin
 
   Finally, you can start roscore with
 

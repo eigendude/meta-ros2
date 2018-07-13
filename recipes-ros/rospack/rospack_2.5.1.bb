@@ -8,8 +8,8 @@ DEPENDS = "boost cmake-modules ${PYTHON_PN}-rospkg-native libtinyxml"
 SRC_URI = "https://github.com/ros/${ROS_SPN}/archive/${PV}.tar.gz;downloadfilename=${ROS_SP}.tar.gz \
            file://0001-Replaced-references-to-deprecated-Boost.TR1.patch \
            "
-SRC_URI[md5sum] = "7911ea89c2e8f5b054db2684cbb9104e"
-SRC_URI[sha256sum] = "68ff422777dad9e1237d6c774aa7d306bb222bb6ccfc4d1dda6b4124f2c3c0b0"
+SRC_URI[md5sum] = "28db19964957b9d2f45ffce6308cf52d"
+SRC_URI[sha256sum] = "5d8c8170b2c240cc5cd333dc2dd97b39162d9be0a6f317904d859672ca75e59e"
 
 inherit catkin
 

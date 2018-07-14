@@ -213,8 +213,8 @@ def update_all_packages():
 
 def update_package(package):
     print_debug("Updating %s" % package)
-    print_header()
-    match, version, dist_version = check_version(package, print_info="all", details=True)
+    # print_header()
+    match, version, dist_version = check_version(package, print_info="none", details=True)
     if match:
         print("Package is already in newest version")
         return

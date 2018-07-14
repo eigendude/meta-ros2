@@ -11,8 +11,8 @@ SRC_URI[sha256sum] = "48ae4695b7424e3da896ae5794b013b635ca8fb8f122b77033bbb548d0
 
 SRC_URI += "\
     file://0001-use-python-provided-by-environment-instead-of-the-ge.patch \
-    file://0001-allow-proper-cross-compilation-with-catkin.patch \
-    ${@'file://0001-python.cmake-look-for-python3-first.patch' if d.getVar('PYTHON_PN', True) == 'python3' else ''} \
+    file://0002-allow-proper-cross-compilation-with-catkin.patch \
+    ${@'file://0003-python.cmake-look-for-python3-first.patch' if d.getVar('PYTHON_PN', True) == 'python3' else ''} \
     "
 
 inherit catkin

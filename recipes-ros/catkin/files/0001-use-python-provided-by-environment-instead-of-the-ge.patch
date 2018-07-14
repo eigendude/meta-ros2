@@ -1,8 +1,8 @@
-From 7894487c0d749124c3b0d82fcebff2309a84024a Mon Sep 17 00:00:00 2001
+From 357fc038d7ab215735bff6adcef08933ae87ee8e Mon Sep 17 00:00:00 2001
 From: Lukas Bulwahn <lukas.bulwahn@bmw-carit.de>
 Date: Tue, 31 May 2016 15:38:05 +0200
-Subject: [PATCH] use python provided by environment instead of the generated
- one
+Subject: [PATCH 1/4] use python provided by environment instead of the
+ generated one
 
 The catkin developers changed the cmake-generated template _setup_util.py
 to use @PYTHON_EXECUTABLE@ instead of /usr/bin/env python in changeset
@@ -13,13 +13,12 @@ bf12b40c2 [1]. We revert this change here to address the issue #384 [2].
 
 Upstream-Status: Inappropriate [only for our setup]
 Signed-off-by: Lukas Bulwahn <lukas.bulwahn@oss.bmw-carit.de>
-
 ---
  cmake/templates/_setup_util.py.in | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/cmake/templates/_setup_util.py.in b/cmake/templates/_setup_util.py.in
-index 1949c4c..f8807f3 100755
+index 106507a..f696ba1 100755
 --- a/cmake/templates/_setup_util.py.in
 +++ b/cmake/templates/_setup_util.py.in
 @@ -1,4 +1,4 @@
@@ -28,3 +27,6 @@ index 1949c4c..f8807f3 100755
  # -*- coding: utf-8 -*-
  
  # Software License Agreement (BSD License)
+-- 
+2.7.4
+

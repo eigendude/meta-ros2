@@ -3,7 +3,7 @@ ROS_SPN = "catkin"
 require catkin.inc
 
 SRC_URI += "\
-    file://0001-ignore-LD_LIBRARY_PATH-set-in-environment_cache.py.patch \
+    file://0004-ignore-LD_LIBRARY_PATH-set-in-environment_cache.py.patch \
     "
 
 S = "${WORKDIR}/catkin-${PV}"

@@ -1,7 +1,7 @@
-From 64d33f250beaeb375cc1c93226c2b45a746d51c2 Mon Sep 17 00:00:00 2001
+From 2ab074c2ffb3d91084ca531d472a8a8d557f85c3 Mon Sep 17 00:00:00 2001
 From: Dmitry Rozhkov <dmitry.rozhkov@linux.intel.com>
 Date: Thu, 27 Apr 2017 11:04:27 +0300
-Subject: [PATCH] ignore LD_LIBRARY_PATH set in environment_cache.py
+Subject: [PATCH 4/4] ignore LD_LIBRARY_PATH set in environment_cache.py
 
 The script environment_cache.py generates a cache file that
 sets LD_LIBRARY_PATH so that the paths to target libs
@@ -26,13 +26,12 @@ by bitbake.
 Upstream-Status: Inappropriate [upstream doesn't use bitbake and the change may break on-target development]
 
 Signed-off-by: Dmitry Rozhkov <dmitry.rozhkov@linux.intel.com>
-
 ---
  python/catkin/environment_cache.py | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/python/catkin/environment_cache.py b/python/catkin/environment_cache.py
-index 3defa52..dba2c50 100755
+index 3defa52..dba2c50 100644
 --- a/python/catkin/environment_cache.py
 +++ b/python/catkin/environment_cache.py
 @@ -112,6 +112,7 @@ def _append_comment(code, value):
@@ -44,3 +43,6 @@ index 3defa52..dba2c50 100755
 +            code.append('export %s="%s"' % (key, value))
      else:
          code.append('set %s=%s' % (key, value))
+-- 
+2.7.4
+

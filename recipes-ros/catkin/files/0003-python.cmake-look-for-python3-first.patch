@@ -1,7 +1,7 @@
-From e321a57de05ec514d019bea102dbc50fd08288b1 Mon Sep 17 00:00:00 2001
+From 1b823c2fc4c721ba5ba5b4d45e1b16e0e9320d40 Mon Sep 17 00:00:00 2001
 From: Dmitry Rozhkov <dmitry.rozhkov@linux.intel.com>
 Date: Thu, 6 Apr 2017 15:25:13 +0300
-Subject: [PATCH] python.cmake: look for python3 first
+Subject: [PATCH 3/4] python.cmake: look for python3 first
 
 Upstream-Status: Inappropriate [the patch overrides ROS's default to python2]
 

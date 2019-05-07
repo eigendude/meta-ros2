@@ -4,8 +4,12 @@ LICENSE = "BSD"
 LIC_FILES_CHKSUM = "file://PKG-INFO;beginline=8;endline=8;md5=e910b35b0ef4e1f665b9a75d6afb7709"
 PYPI_PACKAGE = "catkin_pkg"
 
-SRC_URI[md5sum] = "b80fd19ba4003ff8fe5e55d2b3ba5a2c"
-SRC_URI[sha256sum] = "48d573a420997ea7fa70699685e81a0c42147831be678a54766db7f480a881aa"
+SRC_URI += " \
+    file://0001-Fix-conflicts-with-catkin_pkg_modules-pip-package-li.patch \
+"
+
+SRC_URI[md5sum] = "e5103b99a66a74ca7e5104542a897de2"
+SRC_URI[sha256sum] = "77fdfdcf79b1b92498c83eede9ef727e9c6eeec5b0a5e49c0ce83b8caa0afb36"
 
 inherit pypi
 

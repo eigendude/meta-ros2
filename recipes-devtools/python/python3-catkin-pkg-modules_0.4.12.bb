@@ -1,5 +1,5 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/python-catkin-pkg-modules:"
 
-require python-rosdep.inc
+require python-catkin-pkg-modules.inc
 
-inherit setuptools
+inherit setuptools3

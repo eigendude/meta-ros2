@@ -1,0 +1,43 @@
+From 513510ee94ca4e1366e873a42011099c321de471 Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Tue, 7 May 2019 11:19:21 -0700
+Subject: [PATCH] Fix conflicts with catkin_pkg pip package library.
+
+---
+ setup.py | 14 ++------------
+ 1 file changed, 2 insertions(+), 12 deletions(-)
+
+diff --git a/setup.py b/setup.py
+index 704c85f..326e65b 100755
+--- a/setup.py
++++ b/setup.py
+@@ -16,24 +16,14 @@ if sys.version_info[0] == 2 and sys.version_info[1] < 7:
+     install_requires.append('argparse')
+ 
+ kwargs = {
+-    'name': 'catkin_pkg',
++    'name': 'catkin_pkg_modules',
+     # same version as in:
+     # - src/catkin_pkg/__init__.py
+     # - stdeb.cfg
+     'version': '0.4.12',
+-    'packages': ['catkin_pkg', 'catkin_pkg.cli'],
++    'packages': ['catkin_pkg'],
+     'package_dir': {'': 'src'},
+     'package_data': {'catkin_pkg': ['templates/*.in']},
+-    'entry_points': {
+-        'console_scripts': [
+-            'catkin_create_pkg = catkin_pkg.cli.create_pkg:main',
+-            'catkin_find_pkg = catkin_pkg.cli.find_pkg:main',
+-            'catkin_generate_changelog = catkin_pkg.cli.generate_changelog:main_catching_runtime_error',
+-            'catkin_package_version = catkin_pkg.cli.package_version:main',
+-            'catkin_prepare_release = catkin_pkg.cli.prepare_release:main',
+-            'catkin_tag_changelog = catkin_pkg.cli.tag_changelog:main',
+-            'catkin_test_changelog = catkin_pkg.cli.test_changelog:main',
+-        ]},
+     'author': 'Dirk Thomas',
+     'author_email': 'dthomas@osrfoundation.org',
+     'url': 'http://wiki.ros.org/catkin_pkg',
+-- 
+2.17.1
+

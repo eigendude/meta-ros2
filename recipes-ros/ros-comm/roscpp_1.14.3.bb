@@ -10,6 +10,10 @@ DEPENDS = "cpp-common message-generation rosconsole roscpp-serialization roscpp-
 
 require ros-comm.inc
 
+SRC_URI += "\
+    file://0001-cmake-remove-boost-signals-search-as-it-is-removed-s.patch;patchdir=../.. \
+"
+
 ROS_PKG_SUBDIR = "clients"
 
 CXXFLAGS_append = " -I${OECMAKE_BUILDPATH}/devel/include"

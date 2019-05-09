@@ -1,0 +1,25 @@
+From 378b032aa94c3fa433e98558b5159224d74b06d7 Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Tue, 7 May 2019 11:08:47 -0700
+Subject: [PATCH] Fix conflicts with catkin_pkg_modules pip package library.
+
+---
+ setup.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup.py b/setup.py
+index 704c85f..d9d6618 100755
+--- a/setup.py
++++ b/setup.py
+@@ -21,7 +21,7 @@ kwargs = {
+     # - src/catkin_pkg/__init__.py
+     # - stdeb.cfg
+     'version': '0.4.12',
+-    'packages': ['catkin_pkg', 'catkin_pkg.cli'],
++    'packages': ['catkin_pkg.cli'],
+     'package_dir': {'': 'src'},
+     'package_data': {'catkin_pkg': ['templates/*.in']},
+     'entry_points': {
+-- 
+2.17.1
+

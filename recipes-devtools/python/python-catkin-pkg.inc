@@ -13,7 +13,7 @@ SRC_URI[sha256sum] = "77fdfdcf79b1b92498c83eede9ef727e9c6eeec5b0a5e49c0ce83b8caa
 
 inherit pypi
 
-RDEPENDS_${PN} = "${PYTHON_PN}-unixadmin"
+RDEPENDS_${PN} = "${PYTHON_PN}-catkin-pkg-modules ${PYTHON_PN}-unixadmin"
 RDEPENDS_${PN}_class-native = ""
 
 BBCLASSEXTEND = "native nativesdk"

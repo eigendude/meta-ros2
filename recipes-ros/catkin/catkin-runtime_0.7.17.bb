@@ -8,6 +8,10 @@ SRC_URI += "\
 
 S = "${WORKDIR}/catkin-${PV}"
 
+DEPENDS += " \
+    glibc \
+"
+
 # This package includes ONLY the python packages AND catkin_find
 # The catkin_${PV} package includes all other files
 # from the catkin tool.

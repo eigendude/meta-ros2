@@ -122,15 +122,16 @@ unset abort
 
 skip_keys_option=""
 ros1_lisp_packages="euslisp geneus genlisp roslisp actionlib_lisp cl_tf cl_tf2 cl_transforms cl_transforms_stamped cl_urdf cl_utils roslisp_common roslisp_utilities rosemacs ros_emacs_utils roslisp_repl slime_ros slime_wrapper"
+ros1_simulation_packages="fetch_simulation husky_simulator industrial_robot_simulator jackal_simulator open_manipulator_simulations open_manipulator_with_tb3_simulations pr2_simulator ridgeback_simulator rotors_simulator turtlebot3_simulations uuv_simulator velodyne_simulator warthog_simulator"
 case $ROS_DISTRO in
     "kinetic")
         skip_keys_option="--skip-keys catkin_virtualenv flatbuffers grpc nanomsg octovis rosdoc_lite"
-        skip_keys_option="$skip_keys_option $ros1_lisp_packages"
+        skip_keys_option="$skip_keys_option $ros1_lisp_packages $ros1_simulation_packages""
         ;;
 
     "melodic")
         skip_keys_option="--skip-keys catkin_virtualenv flatbuffers iirob_filters grpc nanomsg octovis rosdoc_lite"
-        skip_keys_option="$skip_keys_option $ros1_lisp_packages"
+        skip_keys_option="$skip_keys_option $ros1_lisp_packages $ros1_simulation_packages""
         ;;
 
     *)  : Nothing is skipped for "crystal" and "dashing".

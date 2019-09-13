@@ -12,6 +12,9 @@ ROS_DISTRO_BASELINE_PLATFORM = "ubuntu-bionic"
 # Set this here, as each ROS distro will must be tested separately with each OE-Core release.
 LAYERSERIES_COMPAT_ros-layer = "thud"
 
+# Unblacklist Python 2 in case this sublayer in being used with a ROS 2 sublayer.
+PNBLACKLIST[python] = ""
+
 # Override settings from generated-ros-distro.inc here.
 
 # Since superflore doesn't know when it's generating a recipe that it will be for a build tool, it can't know that what's in

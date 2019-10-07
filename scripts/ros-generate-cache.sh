@@ -50,7 +50,7 @@ case $ROS_DISTRO in
         export ROS_PYTHON_VERSION="2"
         ;;
 
-    "crystal"|"dashing")
+    "crystal"|"dashing"|"eloquent")
         export ROS_VERSION="2"
         export ROS_PYTHON_VERSION="3"
         ;;

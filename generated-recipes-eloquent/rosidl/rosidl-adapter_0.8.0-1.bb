@@ -17,13 +17,32 @@ ROS_BPN = "rosidl_adapter"
 
 ROS_BUILD_DEPENDS = " \
     ament-cmake \
+    ament-cmake-export-definitions \
+    ament-cmake-export-include-directories \
+    ament-cmake-export-interfaces \
+    ament-cmake-export-libraries \
+    ament-cmake-export-link-flags \
+    ament-cmake-include-directories \
+    ament-cmake-libraries \
+    ament-cmake-python \
+    ament-cmake-target-dependencies \
+    ament-cmake-test \
+    python3 \
 "
 
-ROS_BUILDTOOL_DEPENDS = ""
+ROS_BUILDTOOL_DEPENDS = " \
+    ament-package-native \
+    python3-catkin-pkg-native \
+    python3-native \
+"
 
-ROS_EXPORT_DEPENDS = ""
+ROS_EXPORT_DEPENDS = " \
+    ament-package \
+"
 
-ROS_BUILDTOOL_EXPORT_DEPENDS = ""
+ROS_BUILDTOOL_EXPORT_DEPENDS = " \
+    ament-package-native \
+"
 
 ROS_EXEC_DEPENDS = " \
     python3-empy \

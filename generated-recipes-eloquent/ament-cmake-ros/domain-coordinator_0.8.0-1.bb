@@ -57,3 +57,5 @@ include ${ROS_LAYERDIR}/${ROS_INCLUDES_TREE}/ament-cmake-ros/${BPN}-${PV}.inc
 
 inherit ${ROS_COMPONENT_TYPE}_component
 inherit ros_${ROS_BUILD_TYPE}
+
+BBCLASSEXTEND = "native"

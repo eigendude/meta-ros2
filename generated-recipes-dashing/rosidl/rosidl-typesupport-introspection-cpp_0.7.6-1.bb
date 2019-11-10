@@ -16,6 +16,7 @@ ROS_CN = "rosidl"
 ROS_BPN = "rosidl_typesupport_introspection_cpp"
 
 ROS_BUILD_DEPENDS = " \
+    rosidl-generator-c \
     rosidl-typesupport-introspection-c \
 "
 

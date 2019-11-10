@@ -16,7 +16,6 @@ ROS_CN = "rcl"
 ROS_BPN = "rcl_yaml_param_parser"
 
 ROS_BUILD_DEPENDS = " \
-    libyaml \
     libyaml-vendor \
     rcutils \
 "
@@ -26,14 +25,12 @@ ROS_BUILDTOOL_DEPENDS = " \
 "
 
 ROS_EXPORT_DEPENDS = " \
-    libyaml \
     libyaml-vendor \
 "
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = ""
 
 ROS_EXEC_DEPENDS = " \
-    libyaml \
     libyaml-vendor \
 "
 

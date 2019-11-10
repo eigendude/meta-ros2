@@ -17,6 +17,15 @@ ROS_BPN = "rosidl_adapter"
 
 ROS_BUILD_DEPENDS = " \
     ament-cmake \
+    ament-cmake-export-definitions \
+    ament-cmake-export-include-directories \
+    ament-cmake-export-interfaces \
+    ament-cmake-export-libraries \
+    ament-cmake-export-link-flags \
+    ament-cmake-libraries \
+    ament-cmake-python \
+    ament-cmake-target-dependencies \
+    ament-package-native \
 "
 
 ROS_BUILDTOOL_DEPENDS = ""

@@ -1,0 +1,55 @@
+From 31022ca6d04a355b7d52abd29ee5fd110a79fc5e Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Sat, 16 Nov 2019 12:15:06 -0800
+Subject: [PATCH 1/2] Fix build error
+
+Error was:
+
+file RPATH_CHANGE could not write new RPATH:
+
+    /usr/lib
+
+to the file:
+
+    /bin/nodesize_dbg
+
+No valid ELF RPATH or RUNPATH entry exists in the file;
+---
+ CMakeLists.txt | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 45a62c7..f373320 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -16,6 +16,27 @@ if(NOT foonathan_memory_FOUND)
+     # Library will be statically created with PIC code
+     list(APPEND extra_cmake_args -DCMAKE_POSITION_INDEPENDENT_CODE=ON)
+   endif()
++
++  # Use the full RPATH for the build tree
++  if(BUILD_SHARED)
++    set(CMAKE_SKIP_BUILD_RPATH  FALSE)
++
++    # When building, don't use the install RPATH already (but later on when
++    # installing)
++    set(CMAKE_BUILD_WITH_INSTALL_RPATH FALSE)
++
++    set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
++
++    # Add the automatically determined parts of the RPATH which point to
++    # directories outside the build tree to the install RPATH
++    set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
++
++    # The RPATH to be used when installing, but only if it's not a system directory
++    list(FIND CMAKE_PLATFORM_IMPLICIT_LINK_DIRECTORIES "${CMAKE_INSTALL_PREFIX}/lib" isSystemDir)
++    if("${isSystemDir}" STREQUAL "-1")
++      set(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
++    endif("${isSystemDir}" STREQUAL "-1")
++  endif(BUILD_SHARED)
+   
+   if(DEFINED CMAKE_BUILD_TYPE)
+     list(APPEND extra_cmake_args -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE})
+-- 
+2.20.1
+

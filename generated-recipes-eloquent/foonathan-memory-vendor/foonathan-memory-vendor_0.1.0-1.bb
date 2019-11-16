@@ -15,17 +15,32 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=10;endline=10;md5=401a7342a8776
 ROS_CN = "foonathan_memory_vendor"
 ROS_BPN = "foonathan_memory_vendor"
 
-ROS_BUILD_DEPENDS = ""
-
-ROS_BUILDTOOL_DEPENDS = " \
+ROS_BUILD_DEPENDS = " \
+    ament-package \
     cmake-native \
+    git \
     git-native \
 "
 
-ROS_EXPORT_DEPENDS = ""
+ROS_BUILDTOOL_DEPENDS = " \
+    ament-package-native \
+    cmake-native \
+    git \
+    git-native \
+    qemu-native \
+"
+
+ROS_EXPORT_DEPENDS = " \
+    ament-package \
+    git \
+    git-native \
+"
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = " \
+    ament-package-native \
     cmake-native \
+    git \
+    git-native \
 "
 
 ROS_EXEC_DEPENDS = ""
@@ -40,7 +55,11 @@ DEPENDS += "${ROS_EXPORT_DEPENDS} ${ROS_BUILDTOOL_EXPORT_DEPENDS}"
 
 RDEPENDS_${PN} += "${ROS_EXEC_DEPENDS}"
 
-SRC_URI = "https://github.com/ros2-gbp/foonathan_memory_vendor-release/archive/release/eloquent/foonathan_memory_vendor/0.1.0-1.tar.gz;downloadfilename=${ROS_SP}.tar.gz"
+SRC_URI = " \
+    https://github.com/ros2-gbp/foonathan_memory_vendor-release/archive/release/eloquent/foonathan_memory_vendor/0.1.0-1.tar.gz;downloadfilename=${ROS_SP}.tar.gz \
+    file://0001-Fix-build-error.patch \
+    file://0002-Fix-cross-compiling.patch \
+"
 SRC_URI[md5sum] = "c1aa94a26e5645de9c0e95d4f38f65cc"
 SRC_URI[sha256sum] = "c6fa234fac8edf8c6b24c854487e2363b121e54c174079b2b7d118c301e3cb5d"
 S = "${WORKDIR}/foonathan_memory_vendor-release-release-eloquent-foonathan_memory_vendor-0.1.0-1"
@@ -57,3 +76,7 @@ include ${ROS_LAYERDIR}/${ROS_INCLUDES_TREE}/foonathan-memory-vendor/${BPN}-${PV
 
 inherit ${ROS_COMPONENT_TYPE}_component
 inherit ros_${ROS_BUILD_TYPE}
+
+BBCLASSEXTEND = "native"
+
+OECMAKE_FIND_ROOT_PATH_MODE_PROGRAM = "BOTH"

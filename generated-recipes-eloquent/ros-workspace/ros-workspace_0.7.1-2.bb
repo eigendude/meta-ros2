@@ -16,17 +16,36 @@ ROS_CN = "ros_workspace"
 ROS_BPN = "ros_workspace"
 
 ROS_BUILD_DEPENDS = " \
+    ament-cmake \
     ament-cmake-core \
     ament-package \
+    python3 \
+    python3-native \
 "
 
 ROS_BUILDTOOL_DEPENDS = " \
+    ament-cmake-native \
+    ament-cmake-core-native \
+    ament-package-native \
     cmake-native \
+    python3-native \
 "
 
-ROS_EXPORT_DEPENDS = ""
+ROS_EXPORT_DEPENDS = " \
+    ament-cmake \
+    ament-cmake-core \
+    ament-package \
+    python3 \
+    python3-native \
+"
 
-ROS_BUILDTOOL_EXPORT_DEPENDS = ""
+ROS_BUILDTOOL_EXPORT_DEPENDS = " \
+    ament-cmake-native \
+    ament-cmake-core-native \
+    ament-package-native \
+    cmake-native \
+    python3-native \
+"
 
 ROS_EXEC_DEPENDS = ""
 
@@ -57,3 +76,5 @@ include ${ROS_LAYERDIR}/${ROS_INCLUDES_TREE}/ros-workspace/${BPN}-${PV}.inc
 
 inherit ${ROS_COMPONENT_TYPE}_component
 inherit ros_${ROS_BUILD_TYPE}
+
+inherit python3native

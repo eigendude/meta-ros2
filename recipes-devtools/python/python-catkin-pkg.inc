@@ -15,3 +15,9 @@ RDEPENDS_${PN} = "${PYTHON_PN}-unixadmin ${PYTHON_PN}-pyparsing ${PYTHON_PN}-dat
 RDEPENDS_${PN}_class-native = ""
 
 BBCLASSEXTEND = "native nativesdk"
+
+do_install_append() {
+    rm ${D}${bindir}/catkin_generate_changelog
+    rm ${D}${bindir}/catkin_find_pkg
+    rm ${D}${bindir}/catkin_package_version
+}

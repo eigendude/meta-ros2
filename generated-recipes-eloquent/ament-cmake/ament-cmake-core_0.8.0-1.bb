@@ -15,19 +15,26 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=17;endline=17;md5=12c26a18c7f49
 ROS_CN = "ament_cmake"
 ROS_BPN = "ament_cmake_core"
 
-ROS_BUILD_DEPENDS = ""
+ROS_BUILD_DEPENDS = " \
+    ament-package \
+    python3 \
+"
 
 ROS_BUILDTOOL_DEPENDS = " \
     ament-package-native \
     cmake-native \
+    python3-native \
     python3-catkin-pkg-native \
 "
 
-ROS_EXPORT_DEPENDS = ""
+ROS_EXPORT_DEPENDS = " \
+    ament-package \
+"
 
 ROS_BUILDTOOL_EXPORT_DEPENDS = " \
     ament-package-native \
     cmake-native \
+    python3-native \
     python3-catkin-pkg-native \
 "
 

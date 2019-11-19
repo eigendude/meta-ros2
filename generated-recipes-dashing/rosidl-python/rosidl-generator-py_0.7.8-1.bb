@@ -16,13 +16,18 @@ LIC_FILES_CHKSUM = "file://package.xml;beginline=8;endline=8;md5=12c26a18c7f493f
 ROS_CN = "rosidl_python"
 ROS_BPN = "rosidl_generator_py"
 
-ROS_BUILD_DEPENDS = ""
+ROS_BUILD_DEPENDS = " \
+    python3-numpy \
+"
 
 ROS_BUILDTOOL_DEPENDS = " \
     ament-cmake-native \
+    python3-numpy \
+    python3-numpy-native \
 "
 
 ROS_EXPORT_DEPENDS = " \
+    python3-numpy \
     rmw \
 "
 
@@ -30,6 +35,7 @@ ROS_BUILDTOOL_EXPORT_DEPENDS = " \
     ament-cmake-native \
     ament-index-python-native \
     python-cmake-module-native \
+    python3-numpy-native \
     rosidl-cmake-native \
     rosidl-typesupport-c-native \
     rosidl-typesupport-interface-native \

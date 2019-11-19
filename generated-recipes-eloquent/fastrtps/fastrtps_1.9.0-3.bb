@@ -16,6 +16,7 @@ ROS_CN = "fastrtps"
 ROS_BPN = "fastrtps"
 
 ROS_BUILD_DEPENDS = " \
+    ament-package \
     asio \
     fastcdr \
     foonathan-memory-vendor \
@@ -23,17 +24,23 @@ ROS_BUILD_DEPENDS = " \
 "
 
 ROS_BUILDTOOL_DEPENDS = " \
+    ament-package-native \
     cmake-native \
+    foonathan-memory-vendor-native \
 "
 
 ROS_EXPORT_DEPENDS = " \
+    ament-package \
     fastcdr \
     foonathan-memory-vendor \
     libtinyxml2 \
     openssl \
 "
 
-ROS_BUILDTOOL_EXPORT_DEPENDS = ""
+ROS_BUILDTOOL_EXPORT_DEPENDS = " \
+    ament-package-native \
+    foonathan-memory-vendor-native \
+"
 
 ROS_EXEC_DEPENDS = " \
     fastcdr \

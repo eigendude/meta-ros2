@@ -167,6 +167,12 @@ ROS_UNRESOLVED_PLATFORM_PKG_python3-pyqt5.qtwebengine = "python3-pyqt5"
 # generated-recipes/qt-gui-core/qt-gui_1.0.7-1.bbb
 ROS_UNRESOLVED_PLATFORM_PKG_tango-icon-theme = "adwaita-icon-theme"
 
+ROS_UNRESOLVED_PLATFORM_PKG_python3-cryptography = "python3-cryptography"
+#ROS_UNRESOLVED_PLATFORM_PKG_python3-ifcfg = "python3-ifcfg"
+#ROS_UNRESOLVED_PLATFORM_PKG_python3-netifaces = "python3-netifaces"
+ROS_UNRESOLVED_PLATFORM_PKG_python3-ifcfg = ""
+ROS_UNRESOLVED_PLATFORM_PKG_python3-netifaces = ""
+
 # XXX Temp until superflore fixed.
 # Must use a _pn- override in this file to override the ROS_BUILD_TYPE of a generated recipe,
 # because we need to set this variable before the "inherit" line in the recipe is parsed,

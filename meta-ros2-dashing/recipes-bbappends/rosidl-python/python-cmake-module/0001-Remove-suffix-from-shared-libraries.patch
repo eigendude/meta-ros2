@@ -1,0 +1,24 @@
+From 2a578064787c3530954489f35617efe8c3d22c0c Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Thu, 28 Nov 2019 17:19:21 -0800
+Subject: [PATCH] Remove suffix from shared libraries
+
+---
+ cmake/Modules/FindPythonExtra.cmake | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/cmake/Modules/FindPythonExtra.cmake b/cmake/Modules/FindPythonExtra.cmake
+index 9601038..c5e953f 100644
+--- a/cmake/Modules/FindPythonExtra.cmake
++++ b/cmake/Modules/FindPythonExtra.cmake
+@@ -209,7 +209,6 @@ set(_required_vars
+   PythonExtra_INCLUDE_DIRS
+   PythonExtra_LIBRARIES)
+ if(NOT WIN32)
+-  list(APPEND _required_vars PythonExtra_EXTENSION_SUFFIX)
+ elseif("${CMAKE_BUILD_TYPE}" STREQUAL "Debug")
+   list(APPEND _required_vars PYTHON_EXECUTABLE_DEBUG)
+ endif()
+-- 
+2.20.1
+

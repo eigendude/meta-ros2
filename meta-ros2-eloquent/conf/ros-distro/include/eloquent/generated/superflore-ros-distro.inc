@@ -1482,8 +1482,8 @@ ROS_SUPERFLORE_GENERATED_RECIPES_FOR_COMPONENTS = " \
 
 # Platform packages without a OE-RECIPE@OE-LAYER mapping in base.yaml, python.yaml, or ruby.yaml. Until they are added, override
 # the settings in ros-distro.inc .
-ROS_UNRESOLVED_PLATFORM_PKG_clang-format = "clang-format"
-ROS_UNRESOLVED_PLATFORM_PKG_clang-tidy = "clang-tidy"
+ROS_UNRESOLVED_PLATFORM_PKG_clang-format = ""
+ROS_UNRESOLVED_PLATFORM_PKG_clang-tidy = ""
 ROS_UNRESOLVED_PLATFORM_PKG_libcunit-dev = "libcunit-dev"
 ROS_UNRESOLVED_PLATFORM_PKG_libgazebo9-dev = "libgazebo9-dev"
 ROS_UNRESOLVED_PLATFORM_PKG_libopensplice69 = "libopensplice69"

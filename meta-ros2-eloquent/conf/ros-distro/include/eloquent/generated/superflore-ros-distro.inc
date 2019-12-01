@@ -400,7 +400,6 @@ ROS_SUPERFLORE_GENERATED_RECIPES = " \
     tlsf-cpp \
     topic-monitor \
     trajectory-msgs \
-    turtlesim \
     uncrustify-vendor \
     unique-identifier-msgs \
     urdf \
@@ -774,7 +773,6 @@ ROS_SUPERFLORE_GENERATED_RECIPE_BASENAMES_WITH_COMPONENT = " \
                  realtime-support/tlsf-cpp_0.8.2-1 \
                             demos/topic-monitor_0.8.4-1 \
                 common-interfaces/trajectory-msgs_0.8.1-1 \
-                        turtlesim/turtlesim_1.1.0-1 \
                 uncrustify-vendor/uncrustify-vendor_1.3.0-1 \
            unique-identifier-msgs/unique-identifier-msgs_2.1.0-1 \
                              urdf/urdf_2.2.0-1 \
@@ -1134,7 +1132,6 @@ ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES = " \
     tlsf-cpp \
     topic-monitor \
     trajectory-msgs \
-    turtlesim \
     uncrustify-vendor \
     unique-identifier-msgs \
     urdf \
@@ -1472,7 +1469,6 @@ ROS_SUPERFLORE_GENERATED_RECIPES_FOR_COMPONENTS = " \
     tinyxml-vendor \
     tinyxml2-vendor \
     tlsf \
-    turtlesim \
     uncrustify-vendor \
     unique-identifier-msgs \
     urdf \

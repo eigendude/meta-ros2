@@ -37,9 +37,13 @@ do_install_append() {
         ln -s $profile_dir/$f ${D}${bindir}/ros_$f
     done
 
-    if ${@bb.utils.contains('DISTRO_FEATURES', 'ros-implicit-workspace', 'true', 'false', d)}; then
-        echo ". $profile_dir/setup.sh" > ../ros.sh
-    fi
+    echo ". $profile_dir/setup.sh" > ../ros.sh
 
     cd - > /dev/null
 }
+
+PACKAGES =+ "${PN}-implicitworkspace"
+
+FILES_${PN}-implicitworkspace = " \
+    ${sysconfdir}/profile.d/ros.sh \
+"

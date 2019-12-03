@@ -10,7 +10,7 @@ ROS_DISTRO_CODENAME = "Eloquent Elusor"
 ROS_DISTRO_BASELINE_PLATFORM = "ubuntu-bionic"
 
 require conf/ros-distro/include/eloquent/generated/superflore-datetime.inc
-require conf/ros-distro/include/eloquent/generated/ros-distro.inc
+require conf/ros-distro/include/eloquent/generated/superflore-ros-distro.inc
 require conf/ros-distro/include/eloquent/ros-distro-recipe-blacklist.inc
 require conf/ros-distro/include/eloquent/ros-distro-preferred-versions.inc
 require conf/ros-distro/include/eloquent/ros-distro-preferred-providers.inc

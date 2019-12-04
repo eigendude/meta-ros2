@@ -1,0 +1,29 @@
+From 7d1e66d54f55585f50faa4b1c0136973bb8f7d35 Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Wed, 4 Dec 2019 07:45:46 -0800
+Subject: [PATCH] Don't enable -Werror
+
+Fixes compiler error:
+
+eigen3_decompositions.cpp:196:52: error: array subscript 40 is outside array bounds of 'ecl::TimeStamp [13]' [-Werror=array-bounds]
+|   196 |     std::cout << "ldlt               : " << format(static_cast<double>(times[13])/static_cast<double>(repeats)) << std::endl;
+|       |                                                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
+ CMakeLists.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 276a530..523ce48 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -34,7 +34,6 @@ find_package(ecl_time_lite REQUIRED)
+ 
+ ament_package_xml()
+ ecl_enable_cxx14_compiler()
+-ecl_enable_cxx_warnings()
+ 
+ ##############################################################################
+ # Sources
+-- 
+2.20.1
+

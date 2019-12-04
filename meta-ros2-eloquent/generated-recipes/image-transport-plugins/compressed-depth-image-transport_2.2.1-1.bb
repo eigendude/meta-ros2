@@ -56,3 +56,7 @@ S = "${WORKDIR}/git"
 ROS_BUILD_TYPE = "ament_cmake"
 
 inherit ros_${ROS_BUILD_TYPE}
+
+SRC_URI += " \
+    file://0001-Fix-build-against-newer-OpenCV.patch \
+"

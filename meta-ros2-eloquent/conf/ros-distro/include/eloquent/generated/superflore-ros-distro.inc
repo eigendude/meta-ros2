@@ -189,7 +189,6 @@ ROS_SUPERFLORE_GENERATED_RECIPES = " \
     fastrtps-cmake-module \
     fmi-adapter \
     fmi-adapter-examples \
-    fmilibrary-vendor \
     foonathan-memory-vendor \
     gazebo-msgs \
     gazebo-plugins \
@@ -562,7 +561,6 @@ ROS_SUPERFLORE_GENERATED_RECIPE_BASENAMES_WITH_COMPONENT = " \
       rosidl-typesupport-fastrtps/fastrtps-cmake-module_0.8.0-1 \
                  fmi-adapter-ros2/fmi-adapter_0.1.6-1 \
                  fmi-adapter-ros2/fmi-adapter-examples_0.1.6-1 \
-                fmilibrary-vendor/fmilibrary-vendor_0.1.1-1 \
           foonathan-memory-vendor/foonathan-memory-vendor_0.3.0-1 \
                   gazebo-ros-pkgs/gazebo-msgs_3.4.2-1 \
                   gazebo-ros-pkgs/gazebo-plugins_3.4.2-1 \
@@ -931,7 +929,6 @@ ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES = " \
     fastrtps-cmake-module \
     fmi-adapter \
     fmi-adapter-examples \
-    fmilibrary-vendor \
     foonathan-memory-vendor \
     gazebo-msgs \
     gazebo-plugins \
@@ -1374,7 +1371,6 @@ ROS_SUPERFLORE_GENERATED_RECIPES_FOR_COMPONENTS = " \
     fastcdr \
     fastrtps \
     fmi-adapter-ros2 \
-    fmilibrary-vendor \
     foonathan-memory-vendor \
     gazebo-ros-pkgs \
     geometry2 \

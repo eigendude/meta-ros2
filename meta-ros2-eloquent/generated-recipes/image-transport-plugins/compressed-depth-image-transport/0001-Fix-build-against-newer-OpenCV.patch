@@ -1,0 +1,30 @@
+From d9d40e7f7b5414a9674900dc0bb3f70a54c7b812 Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Wed, 4 Dec 2019 08:03:35 -0800
+Subject: [PATCH] Fix build against newer OpenCV
+
+Error was:
+
+codec.cpp:141:49: error: 'CV_LOAD_IMAGE_UNCHANGED' was not declared in this scope
+  141 |         cv_ptr->image = cv::imdecode(imageData, CV_LOAD_IMAGE_UNCHANGED);
+      |                                                 ^~~~~~~~~~~~~~~~~~~~~~~
+---
+ src/codec.cpp | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/src/codec.cpp b/src/codec.cpp
+index 4c94440..2c4eba7 100644
+--- a/src/codec.cpp
++++ b/src/codec.cpp
+@@ -138,7 +138,7 @@ sensor_msgs::msg::Image::SharedPtr decodeCompressedDepthImage(
+       // Decode raw image
+       try
+       {
+-        cv_ptr->image = cv::imdecode(imageData, CV_LOAD_IMAGE_UNCHANGED);
++        cv_ptr->image = cv::imdecode(imageData, cv::IMREAD_UNCHANGED);
+       }
+       catch (cv::Exception& e)
+       {
+-- 
+2.20.1
+

@@ -1,0 +1,42 @@
+From 9b38c8ac88f3d44addc7ab5ba7ce95ec5d1c0097 Mon Sep 17 00:00:00 2001
+From: BrutusTT <brutusthetschiepel@gmail.com>
+Date: Wed, 4 Sep 2019 11:39:30 +0100
+Subject: [PATCH 1/2] add OpenCV4 support addresses
+ ros-perception/vision_opencv#272
+
+---
+ CMakeLists.txt     | 2 +-
+ src/CMakeLists.txt | 4 +++-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 4a2fa77..4c416cb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -37,7 +37,7 @@ else()
+ endif()
+ 
+ find_package(sensor_msgs REQUIRED)
+-find_package(OpenCV 3 REQUIRED
++find_package(OpenCV REQUIRED
+   COMPONENTS
+     opencv_core
+     opencv_imgproc
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index dc40f1a..3ec80d5 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -34,7 +34,9 @@ if(PYTHON_VERSION_MAJOR VERSION_EQUAL 3)
+   add_definitions(-DPYTHON3)
+ endif()
+ 
+-if(OpenCV_VERSION_MAJOR VERSION_EQUAL 3)
++if (OpenCV_VERSION_MAJOR VERSION_EQUAL 4)
++  add_library(${PROJECT_NAME}_boost module.cpp module_opencv4.cpp)
++elseif(OpenCV_VERSION_MAJOR VERSION_EQUAL 3)
+   add_library(${PROJECT_NAME}_boost module.cpp module_opencv3.cpp)
+ else()
+   add_library(${PROJECT_NAME}_boost module.cpp module_opencv2.cpp)
+-- 
+2.17.1
+

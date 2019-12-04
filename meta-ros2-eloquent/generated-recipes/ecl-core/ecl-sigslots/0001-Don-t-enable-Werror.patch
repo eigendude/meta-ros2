@@ -1,0 +1,29 @@
+From fae77e799845b8a923b5e288cbff3fc98f703122 Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Wed, 4 Dec 2019 07:37:39 -0800
+Subject: [PATCH] Don't enable -Werror
+
+Fixes compiler error:
+
+signal.hpp:179:11: error: implicitly-declared 'constexpr ecl::Signal<ecl::Void>& ecl::Signal<ecl::Void>::operator=(const ecl::Signal<ecl::Void>&)' is deprecated [-Werror=deprecated-copy]
+|   179 |   *this = signal;
+|       |           ^~~~~~
+---
+ CMakeLists.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f6f435c..c5a86d5 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -20,7 +20,6 @@ find_package(ecl_threads REQUIRED)
+ 
+ ament_package_xml()
+ ecl_enable_cxx14_compiler()
+-ecl_enable_cxx_warnings()
+ 
+ ##############################################################################
+ # Header Library Targets
+-- 
+2.20.1
+

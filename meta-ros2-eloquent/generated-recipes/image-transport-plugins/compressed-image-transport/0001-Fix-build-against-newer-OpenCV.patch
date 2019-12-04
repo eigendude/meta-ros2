@@ -1,0 +1,40 @@
+From 4cc8bdfb69b3c4f9b5b0344f95947b6bd9f8f61e Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Wed, 4 Dec 2019 07:58:56 -0800
+Subject: [PATCH] Fix build against newer OpenCV
+
+Error was:
+
+compressed_publisher.cpp:159:19: error: 'CV_IMWRITE_PNG_COMPRESSION' was not declared in this scope
+|   159 |       params[0] = CV_IMWRITE_PNG_COMPRESSION;
+|       |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~
+---
+ src/compressed_publisher.cpp  |  4 ++--
+ src/compressed_subscriber.cpp | 12 ++++++------
+ 2 files changed, 8 insertions(+), 8 deletions(-)
+
+diff --git a/src/compressed_publisher.cpp b/src/compressed_publisher.cpp
+index 806eed6..4038c27 100644
+--- a/src/compressed_publisher.cpp
++++ b/src/compressed_publisher.cpp
+@@ -98,7 +98,7 @@ void CompressedPublisher::publish(
+     // JPEG Compression
+     case JPEG:
+     {
+-      params[0] = CV_IMWRITE_JPEG_QUALITY;
++      params[0] = cv::IMWRITE_JPEG_QUALITY;
+       params[1] = config_.jpeg_quality;
+ 
+       // Update ros message format header
+@@ -156,7 +156,7 @@ void CompressedPublisher::publish(
+       // PNG Compression
+     case PNG:
+     {
+-      params[0] = CV_IMWRITE_PNG_COMPRESSION;
++      params[0] = cv::IMWRITE_PNG_COMPRESSION;
+       params[1] = config_.png_level;
+ 
+       // Update ros message format header
+-- 
+2.20.1
+

@@ -3,7 +3,7 @@ PYTHON_SOABI_ARCH_x86-64 = "x86_64-${TARGET_OS}-gnu"
 PYTHON_SOABI_ARCH_arm = "${TUNE_ARCH}-${TARGET_OS}${ARMPKGSFX_EABI}"
 PYTHON_SOABI_ARCH_aarch64 = "${TUNE_ARCH}-${TARGET_OS}${ARMPKGSFX_EABI}-gnu"
 
-EXTRA_OECMAKE_append = " -DBUILD_TESTING=OFF -DPYTHON_SOABI=cpython-${@d.getVar('PYTHON_BASEVERSION').replace('.', '')}${PYTHON_ABI}-${PYTHON_SOABI_ARCH}"
+EXTRA_OECMAKE_append = " -DBUILD_TESTING=OFF -DPYTHON_SOABI=None"
 
 # XXX Without STAGING_DIR_HOST path included, rmw-implementation:do_configure() fails with:
 #

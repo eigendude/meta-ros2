@@ -13,3 +13,5 @@ S = "${WORKDIR}/git"
 inherit cmake
 
 SRC_URI += "file://0001-Use-object-libraries-instead-of-empty-file-list-in-C.patch"
+
+EXTRA_OECMAKE = "-DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF"

@@ -48,8 +48,3 @@ PACKAGES =+ "${PN}-implicitworkspace"
 FILES_${PN}-implicitworkspace = " \
     ${sysconfdir}/profile.d/ros.sh \
 "
-
-# Define 'BUILD_DEVELOPMENT' to build catkin projects on the device
-FILES_${PN} += " \
-    ${@'${ros_datadir}/${ROS_BPN}/cmake/toplevel.cmake' if d.getVar('BUILD_DEVELOPMENT') == '1' else ''} \
-"

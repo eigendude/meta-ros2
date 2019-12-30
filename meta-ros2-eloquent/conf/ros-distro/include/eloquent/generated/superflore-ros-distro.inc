@@ -229,8 +229,6 @@ ROS_SUPERFLORE_GENERATED_RECIPES = " \
     orocos-kdl \
     osrf-pycommon \
     osrf-testing-tools-cpp \
-    pcl-conversions \
-    pcl-msgs \
     pendulum-control \
     pendulum-msgs \
     pluginlib \
@@ -601,8 +599,6 @@ ROS_SUPERFLORE_GENERATED_RECIPE_BASENAMES_WITH_COMPONENT = " \
        orocos-kinematics-dynamics/orocos-kdl_3.2.1-1 \
                     osrf-pycommon/osrf-pycommon_0.1.9-2 \
            osrf-testing-tools-cpp/osrf-testing-tools-cpp_1.2.1-1 \
-                  pcl-conversions/pcl-conversions_2.0.0-1 \
-                         pcl-msgs/pcl-msgs_1.0.0-1 \
                             demos/pendulum-control_0.8.4-1 \
                             demos/pendulum-msgs_0.8.4-1 \
                         pluginlib/pluginlib_2.4.1-1 \
@@ -968,8 +964,6 @@ ROS_SUPERFLORE_GENERATED_WORLD_PACKAGES = " \
     opensplice-cmake-module \
     orocos-kdl \
     osrf-pycommon \
-    pcl-conversions \
-    pcl-msgs \
     pendulum-control \
     pendulum-msgs \
     pluginlib \
@@ -1282,7 +1276,6 @@ ROS_SUPERFLORE_GENERATED_PLATFORM_PACKAGE_DEPENDENCIES = " \
     mesa \
     opencv \
     openssl \
-    pcl \
     pkgconfig \
     pkgconfig-native \
     poco \
@@ -1389,8 +1382,6 @@ ROS_SUPERFLORE_GENERATED_RECIPES_FOR_COMPONENTS = " \
     orocos-kinematics-dynamics \
     osrf-pycommon \
     osrf-testing-tools-cpp \
-    pcl-conversions \
-    pcl-msgs \
     pluginlib \
     poco-vendor \
     px4-msgs \

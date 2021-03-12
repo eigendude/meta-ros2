@@ -59,7 +59,10 @@ RDEPENDS_${PN} += "${ROS_EXEC_DEPENDS}"
 
 # matches with: https://github.com/ros-gbp/rosconsole-release/archive/release/melodic/rosconsole/1.13.11-1.tar.gz
 ROS_BRANCH ?= "branch=release/melodic/rosconsole"
-SRC_URI = "git://github.com/ros-gbp/rosconsole-release;${ROS_BRANCH};protocol=https"
+SRC_URI = " \
+    git://github.com/ros-gbp/rosconsole-release;${ROS_BRANCH};protocol=https \
+    file://0001-Remove-logging-at-compile-time.patch \
+"
 SRCREV = "60a608d96f4d434df7d0fc19a657e113bb77e02e"
 S = "${WORKDIR}/git"
 

@@ -1,0 +1,28 @@
+From 63226341ff0484f2a260fb5923598fb98d2ea705 Mon Sep 17 00:00:00 2001
+From: Garrett Brown <garrett.brown@aclima.io>
+Date: Fri, 12 Mar 2021 12:34:50 -0800
+Subject: [PATCH] Remove logging at compile time
+
+This change disables all cpp loggers. There is an exception
+though - the roscpp_internal named logger bypasses this as
+it seems it uses the log4cxx logger interfaces directly.
+---
+ include/ros/console.h | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/include/ros/console.h b/include/ros/console.h
+index 8639636..98b8b27 100644
+--- a/include/ros/console.h
++++ b/include/ros/console.h
+@@ -314,7 +314,7 @@ ROSCONSOLE_DECL std::string formatToString(const char* fmt, ...);
+  * Define ROSCONSOLE_MIN_SEVERITY=ROSCONSOLE_SEVERITY_[DEBUG|INFO|WARN|ERROR|FATAL] in your build options to compile out anything below that severity
+  */
+ #ifndef ROSCONSOLE_MIN_SEVERITY
+-#define ROSCONSOLE_MIN_SEVERITY ROSCONSOLE_SEVERITY_DEBUG
++#define ROSCONSOLE_MIN_SEVERITY ROSCONSOLE_SEVERITY_NONE
+ #endif
+ 
+ /**
+-- 
+2.17.1
+

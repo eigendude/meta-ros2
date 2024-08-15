@@ -4,9 +4,6 @@
 # commit changes, the patch will not apply cleanly and we'll know we need to update the .bbappend for yaml-cpp.
 DEPENDS += "ogre"
 
-FILESEXTRAPATHS:prepend := "${THISDIR}/${BPN}:"
-SRC_URI += "file://0001-CMakeLists-remove-all-ament_vendor-calls.patch"
-
 # libxaw is empty, the library is installed in libxaw6 and libxaw7 packages
 # and ogre should get runtime dependency automatically through shlibs
 RDEPENDS:${PN}:remove = "libxaw"

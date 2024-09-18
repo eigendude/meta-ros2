@@ -56,3 +56,6 @@ S = "${WORKDIR}/git"
 ROS_BUILD_TYPE = "ament_cmake"
 
 inherit ros_${ROS_BUILD_TYPE}
+
+# Ensure that the symlink is moved to the -dev package
+FILES:${PN}-dev += "/opt/ros/jazzy/lib/libyaml-cpp.so"

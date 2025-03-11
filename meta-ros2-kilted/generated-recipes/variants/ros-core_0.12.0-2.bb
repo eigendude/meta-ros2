@@ -43,9 +43,6 @@ ROS_EXEC_DEPENDS = " \
     common-interfaces \
     launch \
     launch-ros \
-    launch-testing \
-    launch-testing-ament-cmake \
-    launch-testing-ros \
     launch-xml \
     launch-yaml \
     pluginlib \

@@ -19,7 +19,7 @@ ROS_BPN = "zenoh_cpp_vendor"
 
 ROS_BUILD_DEPENDS = " \
     cargo \
-    clang \
+    clang-native \
     git \
 "
 
